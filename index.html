@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT on Demand - Instant Tech Help</title>
+    <title>IT on Demand - Tiered Tech Support</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,104 +14,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Use the Inter font family */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Add a subtle gradient for visual appeal */
         .hero-gradient {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
+        .tier-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
         .btn-glow {
-            box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
         }
         .btn-glow:hover {
-            box-shadow: 0 0 25px rgba(52, 211, 153, 0.7);
-            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.7);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
 
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-900">IT on Demand</h1>
-            <button class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <a href="#services" class="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                 Get Help Now
-            </button>
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <main>
-        <section class="hero-gradient text-center py-20 md:py-32">
+        <section class="hero-gradient text-center py-20 md:py-28">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Expert IT Help. Right Now.</h2>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Feeling panicked about a scam, virus, or tech issue? Connect instantly with a vetted, Australian-based specialist. No waiting, no bots.</p>
-                <div id="action-buttons" class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button onclick="startConnection('chat')" class="w-full sm:w-auto bg-gray-800 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-gray-900 transition-transform transform hover:scale-105 flex items-center justify-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                        Start Chat
-                    </button>
-                    <button onclick="startConnection('call')" class="w-full sm:w-auto bg-emerald-500 text-white font-bold py-4 px-10 rounded-lg text-lg btn-glow flex items-center justify-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                        Start Call
-                    </button>
-                </div>
+                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">From Everyday Glitches to Major Breaches</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Instant, on-demand access to vetted Australian specialists for any tech or security challenge. Choose your level of support below.</p>
                 <div id="connection-status" class="mt-8 text-lg text-blue-700 font-semibold" style="display: none;"></div>
             </div>
         </section>
 
-        <!-- How It Works Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl font-bold mb-2">It's This Simple</h3>
-                <p class="text-gray-600 mb-12">Get from panic to problem solved in minutes.</p>
-                <div class="grid md:grid-cols-3 gap-12">
-                    <!-- Step 1 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-100 text-blue-600 rounded-full p-5 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 003 0m-3 0h.01M12 14h.01M17 14h.01M17 11.5a1.5 1.5 0 013 0m-3 0v-6a1.5 1.5 0 013 0m-3 0h.01" /></svg>
-                        </div>
-                        <h4 class="text-xl font-semibold mb-2">1. Choose Chat or Call</h4>
-                        <p class="text-gray-600">No forms, no menus. Just pick how you want to connect.</p>
+        <!-- Services/Tiers Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <h3 class="text-3xl font-bold text-center mb-12">Choose Your Support Level</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Tier 1: IT Support -->
+                    <div class="tier-card bg-white rounded-xl shadow-lg p-8 border border-gray-200 flex flex-col">
+                        <h4 class="text-2xl font-bold text-blue-600 mb-2">IT Support</h4>
+                        <p class="text-gray-500 mb-4">For everyday tech frustrations.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$29<span class="text-lg font-medium text-gray-500">/session</span></p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Wi-Fi & Printer Fixes</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Slow Computer Help</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>New Device Setup</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't fix it</span></li>
+                        </ul>
+                        <button onclick="startConnection('IT Support')" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-blue-700 transition-all">Get IT Help</button>
                     </div>
-                    <!-- Step 2 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-100 text-blue-600 rounded-full p-5 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <h4 class="text-xl font-semibold mb-2">2. Connect Instantly</h4>
-                        <p class="text-gray-600">You'll be connected to a real, friendly human expert in under two minutes.</p>
+
+                    <!-- Tier 2: Security Specialist -->
+                    <div class="tier-card bg-white rounded-xl shadow-lg p-8 border-2 border-indigo-600 flex flex-col relative">
+                        <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
+                        <h4 class="text-2xl font-bold text-indigo-600 mb-2">Security Specialist</h4>
+                        <p class="text-gray-500 mb-4">For personal account hacks & scams.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$79<span class="text-lg font-medium text-gray-500">/session</span></p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Scam Message Analysis</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Hacked Account Recovery</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Personal Security Check-up</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't fix it</span></li>
+                        </ul>
+                        <button onclick="startConnection('a Security Specialist')" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg text-lg btn-glow hover:bg-indigo-700 transition-all">Get Security Help</button>
                     </div>
-                    <!-- Step 3 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-100 text-blue-600 rounded-full p-5 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <h4 class="text-xl font-semibold mb-2">3. Get Your Problem Solved</h4>
-                        <p class="text-gray-600">Our specialists guide you through the solution, step-by-step.</p>
+
+                    <!-- Tier 3: Cyber Pro -->
+                    <div class="tier-card bg-white rounded-xl shadow-lg p-8 border border-gray-200 flex flex-col">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Cyber Pro</h4>
+                        <p class="text-gray-500 mb-4">For business incidents & breaches.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">Quote<span class="text-lg font-medium text-gray-500">/case</span></p>
+                        <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Small Business Breach Response</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>System Security Audits</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Advanced Threat Removal</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't solve it</span></li>
+                        </ul>
+                        <button onclick="startConnection('a Cyber Pro')" class="w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-gray-900 transition-all">Get Pro Help</button>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Pricing Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6 max-w-lg text-center">
-                <h3 class="text-3xl font-bold mb-4">Simple, Upfront Pricing</h3>
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-                    <p class="text-5xl font-extrabold text-gray-900 mb-2">$49</p>
-                    <p class="text-gray-600 font-medium mb-6">Per Session</p>
-                    <ul class="text-left space-y-3 text-gray-700 mb-8">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Scam & Virus Checks</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Device Troubleshooting</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Software & Wi-Fi Help</li>
-                         <li class="flex items-center"><svg class="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>And much more...</li>
-                    </ul>
-                    <p class="text-sm text-gray-500">No subscriptions. No hidden fees. Ever.</p>
                 </div>
             </div>
         </section>
@@ -128,27 +121,34 @@
 
     <script>
         // Simple script to simulate the connection process for presentation purposes.
-        function startConnection(type) {
-            const actionButtons = document.getElementById('action-buttons');
+        function startConnection(tier) {
+            const servicesSection = document.getElementById('services');
             const statusDiv = document.getElementById('connection-status');
             
-            // Hide buttons
-            actionButtons.style.display = 'none';
+            // Scroll to top to show status
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Hide services temporarily
+            servicesSection.style.display = 'none';
             
             // Show status
             statusDiv.style.display = 'block';
-            statusDiv.innerText = 'Connecting you to a certified specialist...';
+            statusDiv.innerText = `Connecting you to ${tier}...`;
             
             // Simulate finding an expert
             setTimeout(() => {
-                const experts = ['Chloe', 'Ben', 'Sarah', 'Mike'];
+                const experts = ['Chloe', 'Ben', 'Sarah', 'Mike', 'David', 'Emily'];
                 const randomExpert = experts[Math.floor(Math.random() * experts.length)];
                 statusDiv.innerHTML = `
                     <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-md mx-auto shadow-lg border border-gray-200">
                         <p class="text-gray-900 font-bold text-xl">Connection Established!</p>
-                        <p class="text-gray-600 mt-1">You are now connected with <span class="font-bold text-blue-700">${randomExpert}</span> via ${type}.</p>
+                        <p class="text-gray-600 mt-1">You are now connected with <span class="font-bold text-blue-700">${randomExpert}</span>, your dedicated ${tier}.</p>
                     </div>
                 `;
+                 // Optionally, show the services section again after a delay
+                 setTimeout(() => {
+                    servicesSection.style.display = 'block';
+                 }, 4000);
             }, 2500);
         }
     </script>
