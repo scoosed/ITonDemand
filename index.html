@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT on Demand</title>
+    <title>IT on Demand - Tech Insurance</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,6 +27,7 @@
         }
         .btn-glow {
             box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+            transition: box-shadow 0.3s ease;
         }
         .btn-glow:hover {
             box-shadow: 0 0 25px rgba(99, 102, 241, 0.7);
@@ -37,73 +36,67 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-900">IT on Demand</h1>
-            <a href="#services" class="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                Get Help Now
+            <a href="#plans" class="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                View Plans
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <main>
         <section class="hero-gradient text-center py-20 md:py-28">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">From Everyday Glitches to Major Breaches</h2>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Instant, on-demand access to vetted Australian specialists for any tech or security challenge. Choose your level of support below.</p>
-                <div id="connection-status" class="mt-8 text-lg text-blue-700 font-semibold" style="display: none;"></div>
+                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Your Digital Safety Net. Simple Tech Insurance.</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Stop paying for tech problems after they happen. Get complete peace of mind with our affordable protection plans, backed by Australian experts.</p>
+                <div id="status-update" class="mt-8 text-lg text-blue-700 font-semibold" style="display: none;"></div>
             </div>
         </section>
 
-        <!-- Services/Tiers Section -->
-        <section id="services" class="py-20">
+        <section id="plans" class="py-20">
             <div class="container mx-auto px-6">
-                <h3 class="text-3xl font-bold text-center mb-12">Choose Your Support Level</h3>
+                <h3 class="text-3xl font-bold text-center mb-12">Choose Your Protection Plan</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
-                    <!-- Tier 1: IT Support -->
                     <div class="tier-card bg-white rounded-xl shadow-lg p-8 border border-gray-200 flex flex-col">
-                        <h4 class="text-2xl font-bold text-blue-600 mb-2">IT Support</h4>
-                        <p class="text-gray-500 mb-4">For everyday tech frustrations.</p>
-                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$29<span class="text-lg font-medium text-gray-500">/session</span></p>
+                        <h4 class="text-2xl font-bold text-blue-600 mb-2">Essential Cover</h4>
+                        <p class="text-gray-500 mb-4">Perfect for individuals and everyday tech.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$15<span class="text-lg font-medium text-gray-500">/month</span></p>
                         <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Wi-Fi & Printer Fixes</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Slow Computer Help</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>New Device Setup</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't fix it</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Covers <strong>2</strong> IT Support Sessions per year</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Discounted Security Support</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Covers 1 personal device</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Annual Device Health Check</span></li>
                         </ul>
-                        <button onclick="startConnection('IT Support')" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-blue-700 transition-all">Get IT Help</button>
+                        <button onclick="activatePlan('Essential Cover')" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-blue-700 transition-all">Choose Essential</button>
                     </div>
 
-                    <!-- Tier 2: Security Specialist -->
                     <div class="tier-card bg-white rounded-xl shadow-lg p-8 border-2 border-indigo-600 flex flex-col relative">
                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
-                        <h4 class="text-2xl font-bold text-indigo-600 mb-2">Security Specialist</h4>
-                        <p class="text-gray-500 mb-4">For personal account hacks & scams.</p>
-                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$79<span class="text-lg font-medium text-gray-500">/session</span></p>
+                        <h4 class="text-2xl font-bold text-indigo-600 mb-2">Complete Cover</h4>
+                        <p class="text-gray-500 mb-4">For families and multiple devices.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$29<span class="text-lg font-medium text-gray-500">/month</span></p>
                         <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Scam Message Analysis</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Hacked Account Recovery</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Personal Security Check-up</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't fix it</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Covers <strong>5</strong> IT & Security Sessions per year</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Priority Access to Experts</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Covers up to <strong>5</strong> family devices</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Scam & Phishing Analysis</span></li>
                         </ul>
-                        <button onclick="startConnection('a Security Specialist')" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg text-lg btn-glow hover:bg-indigo-700 transition-all">Get Security Help</button>
+                        <button onclick="activatePlan('Complete Cover')" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg text-lg btn-glow hover:bg-indigo-700 transition-all">Choose Complete</button>
                     </div>
 
-                    <!-- Tier 3: Cyber Pro -->
                     <div class="tier-card bg-white rounded-xl shadow-lg p-8 border border-gray-200 flex flex-col">
-                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Cyber Pro</h4>
-                        <p class="text-gray-500 mb-4">For business incidents & breaches.</p>
-                        <p class="text-4xl font-extrabold text-gray-900 mb-6">Quote<span class="text-lg font-medium text-gray-500">/case</span></p>
+                        <h4 class="text-2xl font-bold text-gray-800 mb-2">Business Shield</h4>
+                        <p class="text-gray-500 mb-4">For small businesses and professionals.</p>
+                        <p class="text-4xl font-extrabold text-gray-900 mb-6">$99<span class="text-lg font-medium text-gray-500">/month</span></p>
                         <ul class="text-left space-y-3 text-gray-700 mb-8 flex-grow">
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Small Business Breach Response</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>System Security Audits</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Advanced Threat Removal</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Full refund if we can't solve it</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span><strong>Unlimited</strong> Remote IT Support</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Incident Response Credit</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Covers up to <strong>10</strong> employee devices</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-emerald-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="font-semibold">Proactive Security Audits</span></li>
                         </ul>
-                        <button onclick="startConnection('a Cyber Pro')" class="w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-gray-900 transition-all">Get Pro Help</button>
+                        <button onclick="activatePlan('Business Shield')" class="w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg text-lg hover:bg-gray-900 transition-all">Choose Business</button>
                     </div>
                 </div>
             </div>
@@ -111,43 +104,43 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
             <p>&copy; 2025 IT on Demand. All Rights Reserved.</p>
-            <p class="text-sm text-gray-400 mt-2">A concept for the Stage 1 Business Innovation task.</p>
+            <p class="text-sm text-gray-400 mt-2">A concept for a modern tech insurance service.</p>
         </div>
     </footer>
 
     <script>
-        // Simple script to simulate the connection process for presentation purposes.
-        function startConnection(tier) {
-            const servicesSection = document.getElementById('services');
-            const statusDiv = document.getElementById('connection-status');
+        // Simple script to simulate the plan activation process for presentation purposes.
+        function activatePlan(planName) {
+            const plansSection = document.getElementById('plans');
+            const statusDiv = document.getElementById('status-update');
             
             // Scroll to top to show status
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // Hide services temporarily
-            servicesSection.style.display = 'none';
+            // Hide plans temporarily
+            plansSection.style.display = 'none';
             
             // Show status
             statusDiv.style.display = 'block';
-            statusDiv.innerText = `Connecting you to ${tier}...`;
+            statusDiv.innerText = `Activating your ${planName} plan...`;
             
-            // Simulate finding an expert
+            // Simulate processing
             setTimeout(() => {
                 const experts = ['Chloe', 'Ben', 'Sarah', 'Mike', 'David', 'Emily'];
                 const randomExpert = experts[Math.floor(Math.random() * experts.length)];
+
                 statusDiv.innerHTML = `
                     <div class="bg-white/80 backdrop-blur-sm rounded-lg p-4 max-w-md mx-auto shadow-lg border border-gray-200">
-                        <p class="text-gray-900 font-bold text-xl">Connection Established!</p>
-                        <p class="text-gray-600 mt-1">You are now connected with <span class="font-bold text-blue-700">${randomExpert}</span>, your dedicated ${tier}.</p>
+                        <p class="text-gray-900 font-bold text-xl">Congratulations! You're Covered!</p>
+                        <p class="text-gray-600 mt-1">Your <span class="font-bold text-blue-700">${planName}</span> plan is now active. Our experts, like ${randomExpert}, are on standby for you.</p>
                     </div>
                 `;
-                 // Optionally, show the services section again after a delay
+                 // Optionally, show the plans section again after a delay
                  setTimeout(() => {
-                    servicesSection.style.display = 'block';
+                    plansSection.style.display = 'block';
                  }, 4000);
             }, 2500);
         }
